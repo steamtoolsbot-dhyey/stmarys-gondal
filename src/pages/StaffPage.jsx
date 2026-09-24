@@ -232,6 +232,10 @@ export default function StaffPage({ onNavigate }) {
                           <span className="text-[11px] text-slate-500 font-medium mt-1">
                             {member.role}
                           </span>
+                          <span className="text-[10px] text-emerald-700 font-semibold mt-1.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
+                            <ShieldCheck className="w-2.5 h-2.5 text-emerald-600" />
+                            <span>Faculty</span>
+                          </span>
                         </div>
                       </ScrollReveal>
                     ))}

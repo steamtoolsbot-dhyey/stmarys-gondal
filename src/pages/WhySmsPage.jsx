@@ -2,8 +2,9 @@ import React from 'react';
 import { Star, ChevronRight, GraduationCap, Laptop, Users, HeartHandshake } from 'lucide-react';
 import { fullSchoolData } from '../data/fullSchoolData';
 import ScrollReveal from '../components/ScrollReveal';
+import EligibilityChecker from '../components/EligibilityChecker';
 
-export default function WhySmsPage({ onNavigate }) {
+export default function WhySmsPage({ onNavigate, onOpenInquiry }) {
   const { whySmsPage } = fullSchoolData;
 
   const icons = [
@@ -68,6 +69,9 @@ export default function WhySmsPage({ onNavigate }) {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Grade Eligibility Checker */}
+        <EligibilityChecker onOpenInquiry={onOpenInquiry} />
 
       </div>
     </div>

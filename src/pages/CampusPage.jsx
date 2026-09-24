@@ -2,8 +2,9 @@ import React from 'react';
 import { Building2, ChevronRight, CheckCircle2, Shield, Wifi, BookOpen, HeartPulse, Palette } from 'lucide-react';
 import { fullSchoolData } from '../data/fullSchoolData';
 import ScrollReveal from '../components/ScrollReveal';
+import CampusHotspotMap from '../components/CampusHotspotMap';
 
-export default function CampusPage({ onNavigate }) {
+export default function CampusPage({ onNavigate, onOpenInquiry }) {
   const { campusPage } = fullSchoolData;
 
   return (
@@ -52,6 +53,9 @@ export default function CampusPage({ onNavigate }) {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Interactive Campus Hotspot Explorer */}
+        <CampusHotspotMap onOpenInquiry={onOpenInquiry} />
 
       </div>
     </div>

@@ -5,166 +5,32 @@
 @layer base {
   :root {
     /* =========================================================
-       THEME 1 (DEFAULT): Oxford Royal & Amber Gold (Modern Heritage)
+       CINEMATIC HERITAGE THEME — St. Mary's Gondal
        ========================================================= */
-    --bg-canvas: #F8FAFC;
-    --bg-alt: #F1F5F9;
+    --bg-canvas: #F0F2F5;
+    --bg-alt: #E8EAEE;
     --bg-card: #FFFFFF;
-    --border-subtle: #E2E8F0;
-    --border-strong: #CBD5E1;
-    --text-primary: #0A192F;
-    --text-secondary: #475569;
-    --text-muted: #64748B;
-    --accent-primary: #D97706;
-    --accent-secondary: #F59E0B;
-    --accent-light: #FEF3C7;
-    --accent-border: #FDE68A;
-    --header-bg: rgba(248, 250, 252, 0.94);
-    --header-border: rgba(226, 232, 240, 0.85);
-    --hero-bg-from: #F0F4F8;
-    --hero-bg-via: #F8FAFC;
-    --hero-bg-to: #EEF2F6;
-    --hero-overlay-from: rgba(240, 244, 248, 0.90);
-    --hero-overlay-via: rgba(248, 250, 252, 0.84);
-    --hero-overlay-to: rgba(238, 242, 246, 0.92);
-    --hero-side-from: rgba(240, 244, 248, 0.78);
-    --hero-side-to: rgba(240, 244, 248, 0.65);
-  }
-
-  [data-theme="sage"] {
-    /* THEME 2: Nordic Sage & Botanical Campus */
-    --bg-canvas: #F4F7F4;
-    --bg-alt: #EAF0EB;
-    --bg-card: #FFFFFF;
-    --border-subtle: #D5E2D8;
-    --border-strong: #BDCFC1;
-    --text-primary: #142820;
-    --text-secondary: #475E52;
-    --text-muted: #60786C;
-    --accent-primary: #C25E3E;
-    --accent-secondary: #E5A93C;
-    --accent-light: #FBF0EB;
-    --accent-border: #F3D2C6;
-    --header-bg: rgba(244, 247, 244, 0.94);
-    --header-border: rgba(213, 226, 216, 0.85);
-    --hero-bg-from: #EDF3EE;
-    --hero-bg-via: #F4F7F4;
-    --hero-bg-to: #E5ECE7;
-    --hero-overlay-from: rgba(237, 243, 238, 0.90);
-    --hero-overlay-via: rgba(244, 247, 244, 0.84);
-    --hero-overlay-to: rgba(229, 236, 231, 0.92);
-    --hero-side-from: rgba(237, 243, 238, 0.78);
-    --hero-side-to: rgba(237, 243, 238, 0.65);
-  }
-
-  [data-theme="cambridge"] {
-    /* THEME 3: Cambridge Crimson & Warm Alabaster */
-    --bg-canvas: #FAF7F2;
-    --bg-alt: #F4EFE6;
-    --bg-card: #FFFFFF;
-    --border-subtle: #E8DFC8;
-    --border-strong: #D5C7AB;
-    --text-primary: #1C1613;
-    --text-secondary: #574C43;
-    --text-muted: #73675E;
-    --accent-primary: #881337;
-    --accent-secondary: #B45309;
-    --accent-light: #FFF1F2;
-    --accent-border: #FECDD3;
-    --header-bg: rgba(250, 247, 242, 0.94);
-    --header-border: rgba(232, 223, 200, 0.85);
-    --hero-bg-from: #F7F2E8;
-    --hero-bg-via: #FAF7F2;
-    --hero-bg-to: #F1EAD8;
-    --hero-overlay-from: rgba(247, 242, 232, 0.90);
-    --hero-overlay-via: rgba(250, 247, 242, 0.84);
-    --hero-overlay-to: rgba(241, 234, 216, 0.92);
-    --hero-side-from: rgba(247, 242, 232, 0.78);
-    --hero-side-to: rgba(247, 242, 232, 0.65);
-  }
-
-  [data-theme="riviera"] {
-    /* THEME 4: Riviera Cobalt & Ice Blue */
-    --bg-canvas: #F4F8FC;
-    --bg-alt: #E9F1F8;
-    --bg-card: #FFFFFF;
-    --border-subtle: #D9E6F5;
-    --border-strong: #BFD4EC;
-    --text-primary: #091E3A;
-    --text-secondary: #4A607A;
-    --text-muted: #677D97;
-    --accent-primary: #2563EB;
-    --accent-secondary: #F59E0B;
-    --accent-light: #EFF6FF;
-    --accent-border: #BFDBFE;
-    --header-bg: rgba(244, 248, 252, 0.94);
-    --header-border: rgba(217, 230, 245, 0.85);
-    --hero-bg-from: #EDF4FA;
-    --hero-bg-via: #F4F8FC;
-    --hero-bg-to: #E3EEF7;
-    --hero-overlay-from: rgba(237, 244, 250, 0.90);
-    --hero-overlay-via: rgba(244, 248, 252, 0.84);
-    --hero-overlay-to: rgba(227, 238, 247, 0.92);
-    --hero-side-from: rgba(237, 244, 250, 0.78);
-    --hero-side-to: rgba(237, 244, 250, 0.65);
-  }
-
-  [data-theme="cashmere"] {
-    /* THEME 5: Warm Cashmere & Tuscan Ochre */
-    --bg-canvas: #F7F4EE;
-    --bg-alt: #EFEAE0;
-    --bg-card: #FFFFFF;
-    --border-subtle: #E2D8C6;
-    --border-strong: #CDC0AB;
-    --text-primary: #221A15;
-    --text-secondary: #5C5046;
-    --text-muted: #786B60;
-    --accent-primary: #D97706;
-    --accent-secondary: #B45309;
-    --accent-light: #FEF3C7;
-    --accent-border: #FDE68A;
-    --header-bg: rgba(247, 244, 238, 0.94);
-    --header-border: rgba(226, 216, 198, 0.85);
-    --hero-bg-from: #F3EFE7;
-    --hero-bg-via: #F7F4EE;
-    --hero-bg-to: #ECE5D8;
-    --hero-overlay-from: rgba(243, 239, 231, 0.90);
-    --hero-overlay-via: rgba(247, 244, 238, 0.84);
-    --hero-overlay-to: rgba(236, 229, 216, 0.92);
-    --hero-side-from: rgba(243, 239, 231, 0.78);
-    --hero-side-to: rgba(243, 239, 231, 0.65);
-  }
-
-  [data-theme="elysian"] {
-    /* THEME 6: Elysian Platinum & Champagne */
-    --bg-canvas: #F8F7FA;
-    --bg-alt: #EFECEF;
-    --bg-card: #FFFFFF;
-    --border-subtle: #E2DEE8;
-    --border-strong: #CDC7D7;
-    --text-primary: #1B1325;
-    --text-secondary: #574E63;
-    --text-muted: #736980;
-    --accent-primary: #C5A059;
-    --accent-secondary: #9333EA;
-    --accent-light: #FAF5FF;
-    --accent-border: #E9D5FF;
-    --header-bg: rgba(248, 247, 250, 0.94);
-    --header-border: rgba(226, 222, 232, 0.85);
-    --hero-bg-from: #F2F0F7;
-    --hero-bg-via: #F8F7FA;
-    --hero-bg-to: #ECE8F2;
-    --hero-overlay-from: rgba(242, 240, 247, 0.90);
-    --hero-overlay-via: rgba(248, 247, 250, 0.84);
-    --hero-overlay-to: rgba(236, 232, 242, 0.92);
-    --hero-side-from: rgba(242, 240, 247, 0.78);
-    --hero-side-to: rgba(242, 240, 247, 0.65);
+    --border-subtle: #D8DCE3;
+    --border-strong: #C0C6D0;
+    --text-primary: #0B1426;
+    --text-secondary: #3D4A5C;
+    --text-muted: #6B7688;
+    --accent-primary: #C9944A;
+    --accent-secondary: #D4A85C;
+    --accent-light: #FAF0DE;
+    --accent-border: #F3DDB8;
+    --header-bg: rgba(240, 242, 245, 0.92);
+    --header-border: rgba(216, 220, 227, 0.85);
+    --terra: #C1614A;
+    --forest: #1A3A2A;
   }
 
   html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
+
   body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
@@ -173,11 +39,14 @@
   }
 }
 
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
 @layer utilities {
   .glass-header {
     background: var(--header-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--header-border);
   }
 
@@ -188,14 +57,8 @@
     border: 1px solid var(--border-subtle);
   }
 
-  .warm-paper {
-    background-color: var(--bg-canvas);
-    background-image: radial-gradient(var(--border-strong) 0.75px, transparent 0.75px);
-    background-size: 24px 24px;
-  }
-
   .academic-gradient-text {
-    background: linear-gradient(135deg, var(--text-primary) 0%, #1e385e 55%, var(--accent-primary) 100%);
+    background: linear-gradient(135deg, var(--text-primary) 0%, #1f2e4d 55%, var(--accent-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -207,67 +70,211 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
+/* ==========================================================================
+   HERO SECTION ANIMATIONS
+   ========================================================================== */
+
+/* 1. Animated gradient mesh background */
+@keyframes hero-mesh-shift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 25%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 25% 0%; }
+}
+
+.hero-gradient-mesh {
+  background:
+    radial-gradient(at 20% 30%, rgba(201, 148, 74, 0.12) 0%, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(59, 100, 180, 0.08) 0%, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(201, 148, 74, 0.06) 0%, transparent 50%),
+    radial-gradient(at 10% 70%, rgba(100, 140, 200, 0.05) 0%, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(193, 97, 74, 0.04) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: hero-mesh-shift 18s ease-in-out infinite;
+}
+
+/* 2. Floating geometric shapes — slow drift with rotation */
+@keyframes hero-shape-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(15px, -20px) rotate(3deg);
+  }
+  50% {
+    transform: translate(-10px, -35px) rotate(-2deg);
+  }
+  75% {
+    transform: translate(20px, -15px) rotate(4deg);
   }
 }
 
-/* Custom subtle scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.hero-shape {
+  animation: hero-shape-float 20s ease-in-out infinite;
 }
-::-webkit-scrollbar-track {
-  background: var(--bg-alt);
+
+/* 3. Floating dots — gentler movement */
+@keyframes hero-dot-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(8px, -12px);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(-6px, -20px);
+    opacity: 0.3;
+  }
 }
-::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: 4px;
+
+.hero-dot {
+  animation: hero-dot-float 12s ease-in-out infinite;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+
+/* 4. Ruler lines draw-in */
+@keyframes hero-ruler-h {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes hero-ruler-v {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+.hero-ruler {
+  transform-origin: left center;
+  animation: hero-ruler-h 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.hero-ruler-v {
+  transform-origin: top center;
+  animation: hero-ruler-v 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* 5. Pulse dot in the badge */
+@keyframes hero-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero-pulse-dot {
+  animation: hero-pulse 2.5s ease-in-out infinite;
+}
+
+/* 6. Staggered text entrance */
+@keyframes text-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.text-rise {
+  opacity: 0;
+  animation: text-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.text-rise-delay-1 { animation-delay: 0.2s; }
+.text-rise-delay-2 { animation-delay: 0.4s; }
+.text-rise-delay-3 { animation-delay: 0.65s; }
+.text-rise-delay-4 { animation-delay: 0.85s; }
+.text-rise-delay-5 { animation-delay: 1.1s; }
+
+/* 7. Scroll indicator */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+.scroll-indicator {
+  animation: scroll-bounce 2.5s ease-in-out infinite;
+}
+
+/* 8. Decorative line grow */
+@keyframes line-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.line-grow {
+  transform-origin: center;
+  animation: line-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.8s;
+  transform: scaleX(0);
 }
 
 /* ==========================================================================
-   LUXURY DESIGN & MICRO-ANIMATION SUITE
+   SECTION SCROLL ANIMATIONS
    ========================================================================== */
 
-/* 1. Ambient Background Drifting Orbs */
-@keyframes float-slow-1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(40px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-30px, 30px) scale(0.95);
-  }
+/* Fade up on scroll (via IntersectionObserver) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes float-slow-2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-50px, 40px) scale(1.15);
-  }
-  66% {
-    transform: translate(35px, -25px) scale(0.9);
-  }
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.animate-float-1 {
-  animation: float-slow-1 18s ease-in-out infinite;
+/* Slide from left */
+.reveal-from-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.animate-float-2 {
-  animation: float-slow-2 22s ease-in-out infinite;
+.reveal-from-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* 2. Photo Gleam Sweep (Luxury High-Gloss Shimmer on Hover) */
+/* Slide from right */
+.reveal-from-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-from-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale up */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   CARD & INTERACTIVE EFFECTS
+   ========================================================================== */
+
+/* Photo gleam sweep on hover */
 .photo-gleam {
   position: relative;
   overflow: hidden;
@@ -284,7 +291,7 @@
     90deg,
     transparent 0%,
     rgba(255, 255, 255, 0) 20%,
-    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 80%,
     transparent 100%
   );
@@ -300,14 +307,159 @@
   opacity: 1;
 }
 
-/* 3. Infinite Institutional Ticker */
+/* Card hover lift */
+.card-hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(11, 20, 38, 0.12),
+              0 8px 16px -4px rgba(11, 20, 38, 0.06);
+}
+
+/* House card color flood */
+.house-card-flood {
+  position: relative;
+  overflow: hidden;
+}
+
+.house-card-flood::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  opacity: 0.08;
+}
+
+.house-card-flood:hover::before {
+  height: 100%;
+}
+
+/* ==========================================================================
+   COUNTER ANIMATION
+   ========================================================================== */
+
+@keyframes count-up-glow {
+  0% { text-shadow: none; }
+  50% { text-shadow: 0 0 20px rgba(201, 148, 74, 0.3); }
+  100% { text-shadow: none; }
+}
+
+/* ==========================================================================
+   HORIZONTAL SCROLL SECTION
+   ========================================================================== */
+
+.horizontal-scroll-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll-card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   MASONRY-STYLE PHOTO GRID
+   ========================================================================== */
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 140px;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+  }
+}
+
+.masonry-tall { grid-row: span 2; }
+.masonry-wide { grid-column: span 2; }
+
+/* ==========================================================================
+   TIMELINE
+   ========================================================================== */
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-primary), var(--border-subtle));
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 1.25rem;
+  }
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: 3px solid var(--bg-canvas);
+  box-shadow: 0 0 0 2px var(--accent-primary);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .timeline-dot {
+    left: 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   NAVBAR TRANSITION
+   ========================================================================== */
+
+.navbar-transparent {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.navbar-solid {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--header-border);
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px -2px rgba(11, 20, 38, 0.06);
+}
+
+/* ==========================================================================
+   MARQUEE (kept for potential use)
+   ========================================================================== */
+
 @keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
@@ -320,421 +472,73 @@
   animation-play-state: paused;
 }
 
-/* 4. Living Gradient Rotating Aura */
-@keyframes rotate-aura {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.living-aura {
-  position: relative;
-}
-
-.living-aura::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  background: conic-gradient(
-    from 0deg,
-    #f59e0b,
-    #d97706,
-    #3b82f6,
-    #f59e0b
-  );
-  border-radius: inherit;
-  z-index: -1;
-  animation: rotate-aura 6s linear infinite;
-  opacity: 0.65;
-  filter: blur(8px);
-}
-
-/* 5. 3D Perspective Utilities */
-.perspective-1000 {
-  perspective: 1000px;
-}
-
 /* ==========================================================================
-   MEGA CREATIVE DESIGN SUITE v2
+   SCROLLBAR
    ========================================================================== */
 
-/* 6. Morphing Blob Shape Animation */
-@keyframes morph-blob-shape {
-  0%, 100% {
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  }
-  25% {
-    border-radius: 70% 30% 50% 50% / 30% 40% 70% 60%;
-  }
-  50% {
-    border-radius: 50% 60% 30% 70% / 60% 30% 50% 40%;
-  }
-  75% {
-    border-radius: 30% 50% 60% 40% / 50% 70% 30% 60%;
-  }
-}
-
-/* 7. Animated Gradient Mesh Background */
-@keyframes gradient-mesh-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 100% 25%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  75% {
-    background-position: 25% 0%;
-  }
-}
-
-.gradient-mesh {
-  background: 
-    radial-gradient(at 20% 30%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
-    radial-gradient(at 80% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(245, 158, 11, 0.07) 0%, transparent 50%),
-    radial-gradient(at 90% 70%, rgba(147, 51, 234, 0.04) 0%, transparent 50%);
-  background-size: 200% 200%;
-  animation: gradient-mesh-shift 20s ease-in-out infinite;
-}
-
-/* 8. Material Ripple Click Effect */
-.ripple-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple-effect::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(217, 119, 6, 0.3) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.ripple-effect:active::before {
-  width: 300px;
-  height: 300px;
-  transition: width 0.5s ease, height 0.5s ease;
-}
-
-/* 9. Aurora Borealis Border Effect */
-@keyframes aurora-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.aurora-border {
-  position: relative;
-}
-
-.aurora-border::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #3b82f6 15%,
-    #8b5cf6 30%,
-    #f59e0b 50%,
-    #ec4899 70%,
-    #3b82f6 85%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: aurora-shift 6s ease-in-out infinite;
-  filter: blur(1px);
-  opacity: 0.8;
-}
-
-/* 10. Draw-Line Animation (Section connectors) */
-@keyframes draw-line-vertical {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
-@keyframes draw-line-horizontal {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-.draw-line-v {
-  transform-origin: top;
-  animation: draw-line-vertical 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.draw-line-h {
-  transform-origin: left;
-  animation: draw-line-horizontal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* 11. Pulse Glow (for BackToTop button) */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.15);
-  }
-}
-
-/* 12. Rainbow Shimmer Border (for Navbar) */
-@keyframes rainbow-shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-.rainbow-border-bottom {
-  position: relative;
-}
-
-.rainbow-border-bottom::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-primary),
-    #3b82f6,
-    #8b5cf6,
-    var(--accent-secondary),
-    var(--accent-primary)
-  );
-  background-size: 200% 100%;
-  animation: rainbow-shimmer 4s linear infinite;
-  opacity: 0.6;
-}
-
-/* 13. Animated Nav Active Underline */
-.nav-active-line {
-  position: relative;
-}
-
-.nav-active-line::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
-  height: 2.5px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav-active-line.active::after,
-.nav-active-line:hover::after {
-  transform: scaleX(1);
-}
-
-/* 14. Glass Depth Card (deeper glassmorphism) */
-.glass-depth {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
-/* 15. Tilt on Scroll (for ScrollReveal enhancement) */
-@keyframes tilt-enter {
-  from {
-    opacity: 0;
-    transform: perspective(800px) rotateY(-12deg) rotateX(6deg) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: perspective(800px) rotateY(0deg) rotateX(0deg) translateY(0);
-  }
-}
-
-/* 16. Shimmer Loading Placeholder */
-@keyframes shimmer-sweep {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.shimmer-load {
-  background: linear-gradient(
-    90deg,
-    var(--bg-alt) 25%,
-    var(--border-subtle) 37%,
-    var(--bg-alt) 63%
-  );
-  background-size: 200% 100%;
-  animation: shimmer-sweep 1.5s ease-in-out infinite;
-}
-
-/* 17. Section Divider with Gradient Fade */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--border-subtle) 15%,
-    var(--accent-primary) 50%,
-    var(--border-subtle) 85%,
-    transparent 100%
-  );
-  opacity: 0.5;
-}
-
-/* 18. Enhanced Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--bg-alt);
-  border-left: 1px solid var(--border-subtle);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 8px;
-  border: 2px solid var(--bg-alt);
+  background: var(--border-strong);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--accent-secondary), var(--accent-primary));
-  box-shadow: 0 0 8px rgba(217, 119, 6, 0.3);
+  background: var(--accent-primary);
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-primary) var(--bg-alt);
+  scrollbar-color: var(--border-strong) var(--bg-alt);
 }
 
-/* 19. Floating Label Animation */
-@keyframes float-subtle {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
 
-.animate-float-subtle {
-  animation: float-subtle 3s ease-in-out infinite;
-}
-
-/* 20. Card Hover Lift with Glow */
-.card-hover-glow {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.card-hover-glow:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 20px 40px -12px rgba(0, 0, 0, 0.08),
-    0 0 0 1px var(--accent-primary),
-    0 4px 16px rgba(217, 119, 6, 0.12);
-}
-
-/* 21. Stagger Fade In (for inline use) */
-@keyframes stagger-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 22. Gradient Text Shimmer */
-@keyframes text-shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-.text-shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--text-primary) 0%,
-    var(--accent-primary) 25%,
-    var(--accent-secondary) 50%,
-    var(--accent-primary) 75%,
-    var(--text-primary) 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: text-shimmer 4s linear infinite;
-}
-
-/* Reduced motion support for all new animations */
 @media (prefers-reduced-motion: reduce) {
-  .morph-blob,
-  .gradient-mesh,
-  .aurora-border::before,
-  .rainbow-border-bottom::after,
-  .animate-float-subtle,
-  .text-shimmer,
-  .shimmer-load {
+  .hero-gradient-mesh,
+  .hero-shape,
+  .hero-dot,
+  .hero-ruler,
+  .hero-ruler-v,
+  .hero-pulse-dot,
+  .scroll-indicator,
+  .text-rise,
+  .line-grow,
+  .animate-marquee {
     animation: none !important;
-  }
-  .card-hover-glow:hover {
+    opacity: 1 !important;
     transform: none !important;
   }
-  .nav-active-line::after {
+
+  .reveal-on-scroll,
+  .reveal-from-left,
+  .reveal-from-right,
+  .reveal-scale {
     transition: none !important;
-    transform: scaleX(1) !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .card-hover-lift:hover {
+    transform: none !important;
+  }
+
+  .scroll-reveal {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .photo-gleam::after {
+    display: none;
   }
 }
 

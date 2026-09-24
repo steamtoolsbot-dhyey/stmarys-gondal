@@ -1,15 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import ContactFooter from './components/ContactFooter';
 import InquiryModal from './components/InquiryModal';
 import NewsModal from './components/NewsModal';
-import ThemeSelector from './components/ThemeSelector';
-import ScrollProgress from './components/ScrollProgress';
-import AmbientBackground from './components/AmbientBackground';
-import InstitutionalTicker from './components/InstitutionalTicker';
 import BackToTop from './components/BackToTop';
-import PageTransition from './components/PageTransition';
+import QuickSearchModal from './components/QuickSearchModal';
 
 // Dedicated Pages
 import HomePage from './pages/HomePage';
@@ -28,9 +23,28 @@ import NewsPage from './pages/NewsPage';
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState(null);
-  const [isNavigating, setIsNavigating] = useState(false);
-  const [pendingPage, setPendingPage] = useState(null);
+
+  // Global Ctrl+K / Cmd+K Search & custom modal events
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+
+    const handleOpenInquiry = () => setIsInquiryOpen(true);
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('open-inquiry-modal', handleOpenInquiry);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('open-inquiry-modal', handleOpenInquiry);
+    };
+  }, []);
 
   // Clean up any custom cursor artifacts to guarantee normal cursor
   useEffect(() => {
@@ -60,19 +74,10 @@ export default function App() {
 
   const navigateTo = useCallback((pageId) => {
     if (pageId === currentPage) return;
-    setPendingPage(pageId);
-    setIsNavigating(true);
+    setCurrentPage(pageId);
+    window.location.hash = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
-
-  const handleTransitionComplete = useCallback(() => {
-    if (pendingPage) {
-      setCurrentPage(pendingPage);
-      window.location.hash = pendingPage;
-      window.scrollTo({ top: 0 });
-      setPendingPage(null);
-    }
-    setIsNavigating(false);
-  }, [pendingPage]);
 
   const renderCurrentPage = () => {
     switch (currentPage) {
@@ -85,9 +90,9 @@ export default function App() {
       case 'staff':
         return <StaffPage onNavigate={navigateTo} />;
       case 'campus':
-        return <CampusPage onNavigate={navigateTo} />;
+        return <CampusPage onNavigate={navigateTo} onOpenInquiry={() => setIsInquiryOpen(true)} />;
       case 'why-sms':
-        return <WhySmsPage onNavigate={navigateTo} />;
+        return <WhySmsPage onNavigate={navigateTo} onOpenInquiry={() => setIsInquiryOpen(true)} />;
       case 'academics':
         return <AcademicsPage onNavigate={navigateTo} onOpenInquiry={() => setIsInquiryOpen(true)} />;
       case 'activities':
@@ -111,54 +116,33 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-canvas)] text-[var(--text-primary)] selection:bg-navy-800 selection:text-gold-300 antialiased transition-colors duration-300 relative">
-      {/* Luxury Initial Preloader & Page Navigation Wipe */}
-      <PageTransition 
-        isActive={isNavigating} 
-        onComplete={handleTransitionComplete} 
-        showInitialLoader={true} 
-      />
-
-      {/* 0. Glowing Golden Scroll Progress Line */}
-      <ScrollProgress />
-
-      {/* 0. Ambient Living Floating Light Orbs */}
-      <AmbientBackground />
-
-      {/* 1. Global Announcement & Direct Info Bar */}
-      <TopBar
-        onNavigate={navigateTo}
-        onOpenInquiry={() => setIsInquiryOpen(true)}
-      />
-
-      {/* 2. Responsive Multi-Page Navigation Header */}
+    <div className="min-h-screen flex flex-col bg-[var(--bg-canvas)] text-[var(--text-primary)] antialiased relative">
+      {/* Fixed Navbar — transparent over hero, solid on scroll */}
       <Navbar
         currentPage={currentPage}
         onNavigate={navigateTo}
         onOpenInquiry={() => setIsInquiryOpen(true)}
+        onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      {/* 2.5. Infinite Luxury Institutional Ticker Banner */}
-      <InstitutionalTicker />
-
-      {/* 3. Dedicated Active Page View */}
+      {/* Active Page View */}
       <main className="flex-grow">
         {renderCurrentPage()}
       </main>
 
-      {/* 4. Complete Footer with Multi-Page Links & Contact Details */}
+      {/* Footer */}
       <ContactFooter
         onNavigate={navigateTo}
         onOpenInquiry={() => setIsInquiryOpen(true)}
       />
 
-      {/* 5. Interactive Admission Inquiry Modal */}
+      {/* Admission Inquiry Modal */}
       <InquiryModal
         isOpen={isInquiryOpen}
         onClose={() => setIsInquiryOpen(false)}
       />
 
-      {/* 6. Interactive News Modal */}
+      {/* News Detail Modal */}
       {selectedNews && (
         <NewsModal
           item={selectedNews}
@@ -167,10 +151,14 @@ export default function App() {
         />
       )}
 
-      {/* 7. Interactive Theme Switcher Previewer */}
-      <ThemeSelector />
+      {/* Quick Search Modal (Ctrl + K) */}
+      <QuickSearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onNavigate={navigateTo}
+      />
 
-      {/* 8. Back to Top Floating Button with Progress Ring */}
+      {/* Back to Top */}
       <BackToTop />
     </div>
   );

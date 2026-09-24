@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, GraduationCap, Send, Phone, CheckCircle, Clock } from 'lucide-react';
 import { schoolContent } from '../data/schoolContent';
+import { fireConfetti } from '../lib/confetti';
 
 export default function InquiryModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
@@ -16,13 +17,14 @@ export default function InquiryModal({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    fireConfetti({ count: 85 });
     setTimeout(() => {
       // Auto close after 2.5s
       setTimeout(() => {
         setSubmitted(false);
         onClose();
-      }, 2000);
-    }, 500);
+      }, 2200);
+    }, 400);
   };
 
   return (
