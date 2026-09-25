@@ -1,92 +1,95 @@
 import React from 'react';
-import { BookOpen, ChevronRight, GraduationCap } from 'lucide-react';
+import { BookOpen, GraduationCap, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
 import { fullSchoolData } from '../data/fullSchoolData';
 import ScrollReveal from '../components/ScrollReveal';
+import ChroniclePageHeader from '../components/chronicle/ChroniclePageHeader';
+import ChronicleCard from '../components/chronicle/ChronicleCard';
 
 export default function AcademicsPage({ onNavigate, onOpenInquiry }) {
   const { academicsPage } = fullSchoolData;
 
   return (
-    <div className="py-12 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FDFCFA] text-[#0B1426] min-h-screen">
+      
+      {/* ── Standard Chronicle Header ── */}
+      <ChroniclePageHeader
+        chapterNumber="CHAPTER II"
+        title={academicsPage.title}
+        subtitle={academicsPage.subtitle}
+        currentPage="academics"
+        onNavigate={onNavigate}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-slate-500 mb-8">
-          <button onClick={() => onNavigate('home')} className="hover:text-navy-900 font-semibold">Home</button>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-slate-800 font-bold">Academics</span>
-        </div>
-
-        {/* Page Header */}
-        <ScrollReveal animation="fade-up" className="max-w-3xl mb-12 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-gold-700 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 inline-block">
-            Curriculum & Pedagogy
-          </span>
-          <h1 className="font-serif text-4xl sm:text-5xl font-extrabold text-navy-950 tracking-tight">
-            {academicsPage.title}
-          </h1>
-          <p className="text-lg text-slate-600 font-medium">
-            {academicsPage.subtitle}
-          </p>
-        </ScrollReveal>
-
         {/* Overview Box */}
-        <ScrollReveal animation="fade-up" delay={150}>
-          <div className="bg-sand-100/90 rounded-3xl p-6 sm:p-8 border border-sand-200 mb-14 max-w-4xl">
-            <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
+        <ScrollReveal animation="fade-up">
+          <div className="bg-[#F7F4EE] rounded-3xl p-6 sm:p-10 border border-[#E5DCCE] mb-16 max-w-4xl shadow-soft">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold-100/70 border border-gold-300/60 text-xs font-mono font-bold tracking-widest text-gold-800 uppercase mb-3">
+              <span>SCHOLASTIC PHILOSOPHY</span>
+            </div>
+            <p className="text-base sm:text-lg text-navy-900 leading-relaxed font-light">
               {academicsPage.overview}
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Academic Divisions - Staggered Pop */}
-        <div className="space-y-12">
+        {/* Academic Divisions */}
+        <div className="space-y-10 max-w-5xl">
           {academicsPage.sections.map((sec, idx) => (
-            <ScrollReveal key={idx} animation="pop" delay={idx * 150}>
-              <div
-                className="bg-white rounded-3xl p-6 sm:p-8 border border-sand-200 shadow-soft flex flex-col md:flex-row items-center gap-8"
-              >
-                <div className="w-full md:w-64 h-52 rounded-2xl overflow-hidden flex-shrink-0 bg-sand-100 border-2 border-sand-200/60 shadow-sm group">
-                  <img
-                    src={sec.image}
-                    alt={sec.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                <div className="flex-1 space-y-3">
-                  <div className="inline-block px-3 py-1 rounded-md bg-gold-50 text-gold-800 text-xs font-bold uppercase tracking-wider border border-gold-200">
-                    {sec.grades}
+            <ScrollReveal key={idx} animation="pop" delay={idx * 120}>
+              <ChronicleCard theme="ivory" enableTilt={false} className="p-0 overflow-hidden group hover:border-gold-500/50">
+                <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
+                  
+                  {/* Photo Side */}
+                  <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden bg-navy-950">
+                    <img
+                      src={sec.image}
+                      alt={sec.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
+                    <span className="absolute top-4 left-4 text-[10px] font-mono uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-white border border-white/20">
+                      Division {idx + 1}
+                    </span>
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-navy-950">
-                    {sec.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    {sec.desc}
-                  </p>
+
+                  {/* Content Side */}
+                  <div className="md:col-span-7 p-6 sm:p-8 flex flex-col justify-center bg-white space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="px-3 py-1 rounded-md bg-gold-50 text-gold-800 text-xs font-mono font-bold uppercase tracking-wider border border-gold-200">
+                        {sec.grades}
+                      </span>
+                      <span className="text-xs text-navy-400 font-mono">• GSEB Curriculum</span>
+                    </div>
+
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-navy-950 group-hover:text-gold-700 transition-colors">
+                      {sec.title}
+                    </h3>
+
+                    <p className="text-sm sm:text-base text-navy-600 leading-relaxed">
+                      {sec.description}
+                    </p>
+
+                    <div className="pt-2 flex items-center justify-between border-t border-mist-200">
+                      <div className="text-xs font-semibold text-navy-500">
+                        State Board Examination Prep
+                      </div>
+                      <button
+                        onClick={onOpenInquiry}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-gold-700 hover:text-gold-900 transition-colors"
+                      >
+                        <span>Admission Inquiry</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
+              </ChronicleCard>
             </ScrollReveal>
           ))}
         </div>
-
-        {/* CTA Banner */}
-        <ScrollReveal animation="zoom" delay={150}>
-          <div className="mt-16 bg-navy-950 text-white rounded-3xl p-8 sm:p-12 text-center space-y-4">
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold">
-              Admissions Open for Academic Year 2025-2026
-            </h3>
-            <p className="text-slate-300 text-sm max-w-xl mx-auto">
-              Apply today to secure a seat for your child in an inspiring academic atmosphere.
-            </p>
-            <button
-              onClick={onOpenInquiry}
-              className="px-8 py-3.5 rounded-xl bg-gold-600 hover:bg-gold-500 text-navy-950 font-bold text-sm shadow-md transition-all inline-block"
-            >
-              Submit Admission Inquiry
-            </button>
-          </div>
-        </ScrollReveal>
 
       </div>
     </div>

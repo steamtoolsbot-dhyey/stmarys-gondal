@@ -30,3 +30,7 @@ Thumbs.db
 # Scraped raw source dumps (not needed for deployment)
 Home - St. Mary's School - Gondal.html
 Home - St. Mary's School - Gondal_files/
+
+# Agent & AI tool configurations
+.agents/
+

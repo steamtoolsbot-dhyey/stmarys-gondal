@@ -1,71 +1,77 @@
 import React from 'react';
-import { History, ChevronRight } from 'lucide-react';
+import { History, ChevronRight, Calendar, Camera } from 'lucide-react';
 import { fullSchoolData } from '../data/fullSchoolData';
 import ScrollReveal from '../components/ScrollReveal';
+import ChroniclePageHeader from '../components/chronicle/ChroniclePageHeader';
+import ChronicleCard from '../components/chronicle/ChronicleCard';
 
 export default function HistoryPage({ onNavigate }) {
   const { historyPage } = fullSchoolData;
 
   return (
-    <div className="py-12 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#FDFCFA] text-[#0B1426] min-h-screen">
+      
+      {/* ── Standard Chronicle Header ── */}
+      <ChroniclePageHeader
+        chapterNumber="CHRONICLES OF 1979"
+        title={historyPage.title}
+        subtitle={historyPage.subtitle}
+        currentPage="history"
+        onNavigate={onNavigate}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-slate-500 mb-8">
-          <button onClick={() => onNavigate('home')} className="hover:text-navy-900 font-semibold">Home</button>
-          <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-slate-800 font-bold">History</span>
-        </div>
-
-        {/* Page Header */}
-        <ScrollReveal animation="fade-up" className="max-w-3xl mb-12 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-gold-700 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 inline-block">
-            Our Founding Journey
-          </span>
-          <h1 className="font-serif text-4xl sm:text-5xl font-extrabold text-navy-950 tracking-tight">
-            {historyPage.title}
-          </h1>
-          <p className="text-lg text-slate-600 font-medium">
-            {historyPage.subtitle}
-          </p>
-        </ScrollReveal>
-
-        {/* History Text */}
-        <div className="max-w-4xl space-y-6 text-slate-700 text-base sm:text-lg leading-relaxed mb-16">
+        {/* Narrative Section */}
+        <div className="max-w-4xl space-y-6 text-[#3D4A5C] text-base sm:text-lg leading-relaxed mb-20">
           {historyPage.paragraphs.map((p, idx) => (
             <ScrollReveal key={idx} animation="fade-up" delay={idx * 60}>
-              <p className="font-normal">
-                {p}
-              </p>
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E5E0D6] shadow-soft">
+                <p className="font-light leading-relaxed">
+                  {idx === 0 && (
+                    <span className="font-serif text-4xl sm:text-5xl font-bold text-navy-950 float-left mr-3 leading-none">
+                      {p.charAt(0)}
+                    </span>
+                  )}
+                  {idx === 0 ? p.substring(1) : p}
+                </p>
+              </div>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* Historical Archives Gallery (All 8 Original Photos) - Staggered Pop */}
-        <div className="pt-8 border-t border-sand-200">
+        {/* Archival Photo Gallery */}
+        <div className="pt-10 border-t border-[#E5E0D6]">
           <ScrollReveal animation="fade-up">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-950 mb-8">
-              Historical Photo Archives
-            </h2>
+            <div className="flex items-center gap-2 mb-8">
+              <Camera className="w-5 h-5 text-gold-600" />
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-950">
+                Archival Photographic Records
+              </h2>
+            </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {historyPage.images.map((item, idx) => (
-              <ScrollReveal key={idx} animation="pop" delay={(idx % 4) * 80}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-soft border border-sand-200 flex flex-col group h-full">
-                  <div className="h-48 overflow-hidden bg-sand-200">
+              <ScrollReveal key={idx} animation="pop" delay={(idx % 4) * 70}>
+                <ChronicleCard theme="parchment" enableTilt={true} className="p-0 overflow-hidden group">
+                  <div className="h-52 overflow-hidden bg-navy-950 relative">
                     <img
                       src={item.src}
                       alt={item.caption}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+                    <span className="absolute top-3 left-3 text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-black/50 text-gold-300 border border-white/20">
+                      {item.year || '1979 ARCHIVE'}
+                    </span>
                   </div>
-                  <div className="p-3 text-center flex-1 flex items-center justify-center">
-                    <p className="text-xs font-semibold text-slate-700">
+                  <div className="p-4 bg-white flex-1 flex flex-col justify-between">
+                    <p className="text-xs font-medium text-navy-800 line-clamp-2 leading-relaxed">
                       {item.caption}
                     </p>
                   </div>
-                </div>
+                </ChronicleCard>
               </ScrollReveal>
             ))}
           </div>
